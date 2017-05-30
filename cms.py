@@ -5,13 +5,14 @@ def lxmlParse(url , session):
     return lxml.html.fromstring(session.openForParse(url))
 
 def main():
-    print("\n\nCMS Notifier")
-    try:
-        #login
-        username = input("Enter Username : ")
-        session = Login(username , getpass.getpass("Enter Password  : "))
-    except:
-        print("\nUsing Terminal ! Password may be echoed on screen.");
+    print("\nCMS Parser")
+
+    #login
+    username = input("Enter Username : ")
+    session = Login(username , getpass.getpass("Enter Password  : "))
+
+    print("\nPlease Wait...\n\n")
+
 
     #parse page containing list of all courses
     doc = lxmlParse("http://id.bits-hyderabad.ac.in/moodle/my/index.php?mynumber=-2" , session)
