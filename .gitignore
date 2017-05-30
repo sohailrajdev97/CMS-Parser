@@ -99,3 +99,6 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+#data stored by the tool
+data/*
